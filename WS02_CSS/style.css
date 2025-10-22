@@ -1,4 +1,18 @@
+/* a, link styling */
 a {
-    background-color: lightblue;
-    color: darkgoldenrod
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: rgb(0, 255, 98);
+    color: white;
+}
+
+a:visited {
+    background-color: yellow;
+    color: red
 }
