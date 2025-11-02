@@ -1,0 +1,23 @@
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* animation that runs once*/
+
+body {
+  background: linear-gradient(67deg,white, #ff0000, #ff7f00, #ffff00,rgb(0, 255, 191));
+  background-size: 1400% 1400%;
+  animation: rainbow 20s ease 0s 1 forwards;
+}
+
+.notdone {
+    font-size: 18px;
+    text-shadow: 1px 1px 2px #000000;
+    color: aliceblue;
+}
+.wip{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px #000000;
+    color: coral;
+}
