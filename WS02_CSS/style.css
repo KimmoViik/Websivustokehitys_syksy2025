@@ -1,6 +1,12 @@
 /* a, link styling */
+@keyframes dumbdumb {
+  0%   { margin-left: 0% 50%; }
+  50%  { margin-left: 100% 50%; }
+  100% { margin-left: 0% 50%; }
+}
+
 a {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(150, 85, 0);
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -17,5 +23,39 @@ a:visited {
     color: red
 }
 .bkc {
-    background-color: rgb(197, 0, 0);
+    background-color: rgb(255, 216, 216);
+}
+
+.content-box {
+    border: 3px solid rgb(255, 0, 234);
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(0, 215, 253);
+    margin-right: 80%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+th {
+    background-color: lightgray;
+}
+td {
+    background-color: white;
+}
+input[type="text"] {
+    border: 2px solid rgb(0, 60, 255);
+    padding: 5px;
+    border-radius: 4px;
+}
+input[type="text"] :hover {
+    color: 2px solid rgb(0, 255, 150);
+    border: 4px solid rgb(255, 255, 255);
+    background-color: black;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(59, 59, 59);
 }
