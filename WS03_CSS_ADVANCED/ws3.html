@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="styles/audiofunc.js" defer></script>
+    <title>CSS_ADVANCED</title>
+  </head>
+  <body>
+    <!-- background video (place Vibegif.mp4 in WS03_CSS_ADVANCED/mediafiles/) -->
+    <video id="bgVideo" autoplay muted loop playsinline preload="metadata">
+      <source src="mediafiles/Vibegif.mp4" type="video/mp4" />
+    </video>
+
+    <div class="site-content">
+      <h1>CSS ADVANCED</h1>
+      <div class="VIBE">
+        <!-- audio element (hidden native controls) -->
+        <audio
+          id="Vibebutton"
+          src="mediafiles/howtodream.mp3"
+          type="audio/mp3"
+          loop
+        ></audio>
+        <!-- button to control playback; hooked up in styles/audiofunc.js -->
+        <p><button id="VibeTrigger" type="button"></button></p>
+      </div>
+      <p>
+        Tässä on kyseessä CSS 2. osa jossa opimme KEYFRAMES ja animaatio
+        ominaisuuksia
+      </p>
+      <br />
+      <p>suurin osa ajasta meni musiikki nappiin ja sen ominaisuuksiin...</p>
+      <br />
+      <div class="button"><a href="../index.html">takaisin</a></div>
+      <p>
+        tiedän miten sama ominaisuus olisi voitu tehdä audio controls ja
+        autoplay muted kautta, mutta halusin tutkia tätä vaihtoehtoa
+      </p>
+      <button id="gray">evil button</button>
+      <br />
+      <ul class="pseudo-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+
+      <blockquote class="quote">joku hieno quote</blockquote>
+
+      <footer>
+        audio osuuteen on käytetty tekoälyä ja nettiä jotta saisin ominaisuuden
+        toimimaan javascriptin kautta. Gemini, copilot ja W3schools.com oli
+        käytössä tätä varten.
+      </footer>
+    </div>
+    <!-- .site-content -->
+  </body>
+</html>

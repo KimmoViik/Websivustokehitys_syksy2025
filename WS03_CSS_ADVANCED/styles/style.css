@@ -1,0 +1,221 @@
+@keyframes party {
+  0% {
+    background-color: salmon;
+  }
+
+  25% {
+    background-color: lightgreen;
+  }
+
+  50% {
+    background-color: lightblue;
+  }
+
+  75% {
+    background-color: gold;
+  }
+
+  100% {
+    background-color: salmon;
+  }
+}
+
+@keyframes partymoves {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(12px);
+  }
+  50% {
+    transform: translateX(24px);
+  }
+  75% {
+    transform: translateX(12px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes headerEntrance {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes colorchange {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+  25% {
+    color: rgb(255, 117, 209);
+  }
+  50% {
+    color: rgb(109, 193, 250);
+  }
+  75% {
+    color: salmon;
+  }
+  90% {
+    color: rgb(255, 255, 255);
+  }
+    100% {
+        color: salmon;
+    }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+h1 {
+  /* run entrance once and keep final state, then run color change (can be reused elsewhere) */
+  color: salmon;
+  animation: headerEntrance 3s ease-in-out 0s forwards;
+  animation: colorchange 3s ease-in-out 0s;
+  position: relative;
+}
+
+.pseudo-list li{
+    text-align: left;
+    display: table;
+    margin: 1px;
+    padding: 2px;
+}
+.pseudo-list li:nth-child(odd) {
+        background-color: rgb(255, 90, 90);
+      }
+.pseudo-list li:nth-child(even) {
+        background-color: rgb(255, 164, 79);
+      }
+
+
+/* apply color change only when music is playing by toggling this class in JS */
+.music-color {
+  animation: colorchange 3s linear 0s infinite;
+}
+
+.button {
+  background-color: salmon;
+  border: 1px solid #555555;
+  color: white;
+  padding: 0px 10px;
+  text-align: left;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 5px #999;
+  position: relative; /* allow transform-based animations */
+}
+
+/* when the .VIBE container has the VIBE-playing class, animate the button inside it */
+.VIBE.VIBE-playing button,
+.VIBE.VIBE-playing #VibeTrigger {
+  animation: party 10s infinite;
+  position: relative; /* allow transform animation */
+}
+
+/* animate the separate .button element when a preceding .VIBE is active
+   (uses general sibling selector so .button can be after .VIBE in the DOM) */
+.VIBE.VIBE-playing ~ .button {
+  animation: partymoves 3s infinite, party 3s infinite;
+  position: relative; /* allow transform animation */
+}
+
+
+.button:hover {
+  transition: background-color 2sec ease;
+  background-color: rgb(109, 193, 250);
+}
+
+.VIBE {
+  color: black;
+  border-radius: 4px;
+  margin: 2px;
+  /* layout: place items horizontally and center them vertically */
+  align-items: center;
+  gap: 0.5rem; /* space between button and other controls */
+  display: flex;
+  cursor: pointer;
+  padding: 6px;
+}
+.VIBE-playing {
+  opacity: 0.4;
+}
+/* background video should sit behind everything */
+#bgVideo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* behind overlay and content */
+  pointer-events: none;
+}
+
+is-gray #bgVideo,
+body.is-gray .site-content {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.quote {
+  font-style: italic;
+  border-left: 4px solid coral;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #333333;
+}
+
+.quote::before {
+  content: "“"; /* opening quotation mark */
+  font-size: 2em;
+  vertical-align: top;
+  line-height: 0;
+  margin-right: 0.1em;
+  color: rgb(0, 0, 0);
+}
+
+/* page background video that sits below background color and pops out as music plays*/
+body::before {
+  content: ""; /*so that the background video is not visible before playbutton*/
+  position: fixed;
+  inset: 0;
+  background: #a9d6f5;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+body.vibe-playing::before {
+  opacity: 0.3;
+}
+
+/* ensure content appears above overlay -AI*/
+.site-content {
+  position: relative;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    transition: none;
+  }
+}
+/* JS-toggled class for the standalone .button to run party animation */
+.button.party-on {
+  animation: partymoves 3s infinite, party 3s infinite;
+}
