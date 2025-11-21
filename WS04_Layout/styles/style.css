@@ -1,0 +1,122 @@
+@keyframes box-hover {
+  0% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(var(--MAXscale));
+    filter: grayscale(20%);
+  }
+  100% {
+    transform: scale(var(--ENDscale));
+    filter: grayscale(0%);
+  }
+}
+
+@media (max-width: 1920px) {
+  .responsive-box {
+    background-color: rgb(255, 27, 27);
+  }
+}
+@media (min-width: 10px) and (max-width: 640px) {
+  .responsive-box {
+    background-color: rgb(174, 253, 249);
+  }
+}
+
+
+
+
+:root {
+  --bg-level: 0; /* 0 => white, 1 => black */
+  --base-scale: 1;
+}
+
+body {
+  background-color: hsl(0 0% calc((1 - var(--bg-level)) * 100%));
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.YAP {
+  text-align: center;
+  font-size: 14px;
+  text-shadow: 4px;
+  color: rgb(255, 255, 255);
+}
+
+.text-color {
+  color: hsl(
+    calc(240deg * (1 - var(--bg-level))),
+    100%,
+    70%
+  ); /*tajusin miten tää toimii, ees copilot ei osannu auttaa tässä...
+    toi menee HSL mukaan ja 1. on väri, 2. on sen värin voimakkuus ja viimene on kirkkaus
+  eli riippuen siitä mihin laittaa --bg-level argumentin väri, sävy tai kirkkaus vaihtuu.*/
+}
+
+.description-text {
+  color: hsl(calc(255deg * (0.8 - var(--bg-level))), 120%, 80%);
+}
+
+.responsive-box {
+  padding: 20px;
+  text-align: center;
+  border: 2px;
+  margin-top: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 10px;
+}
+
+.box {
+  background-color: rgb(198, 255, 65);
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.box:hover {
+  background-color: rgb(102, 255, 56);
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --MAXscale: 1.5;
+  --ENDscale: 1.2;
+  animation: box-hover 0.5s ease 0s 1 forwards;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: start;
+  color: white;
+}
+
+.grid-item {
+  background-color: lightgreen;
+  max-width: 100%;
+  max-height: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 5%;
+  padding-left: 40%;
+  padding-right: 40%;
+  border-radius: 10px;
+}
+.grid-item:hover {
+  background-color: rgb(0, 146, 102);
+  --MAXscale: 1.2;
+  --ENDscale: 1.05;
+  animation: box-hover 0.5s ease 0s 1 forwards;
+}
+.frogpic {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}

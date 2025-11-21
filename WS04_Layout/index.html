@@ -3,13 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Muistin vaihtaa tittelin</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="styles/background.js" defer></script>
   </head>
-  <body>
-    <div class="frogpic">
-    <img src="../Pictures/WS4frog.png" alt="Proof">
+  <body class="background-animate">
+    <div class="text-color"><h1>Tervetuloa käsittelemään Layouttia kanssani.</h1></div>
+    <div class="flex-container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
     </div>
-    <h1>Tervetuloa käsittelemään Layouttia kanssani.</h1>
-</body>
+     <div class="YAP"><p>en keksinyt mitä laittaa näihin laatikoihin</p></div>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+    </div>
+    <div class="responsive-box">moi!</div>
+    <header>
+        <div class="text-color">
+      <h1>My Website</h1>
+      <nav>
+        <main>
+          <section id="links">
+            <ul>
+              <li><a href="#flexbox">Flexbog, pelin läpäisy.</a></li>
+              <li><a href="#section">Section</a></li>
+            </ul>
+          </section>
+        </main>
+      </nav>
+    </header>
+
+    <main>
+        <div class="description-text">
+      <section id="section">
+        <h2>Section</h2>
+        <p>
+          section id=x ja li, a jossa href on merkattu #:llä saavat
+          sisällysluettelon, joka toimii sivun sisäisesti.
+        </p>
+        <p>esim.</p>
+        <ul>
+          <li><a href="#links">Linkit</a></li>
+        </ul>
+         </section>
+        </div>
+    </div>
+    </main>
+    <a href="../index.html">Takaisin pääsivulle</a>
+    <br>
+    <a href="../WS05_Responsive_design/">WIP- ei toimi</a>
+    <div class="frogpic">
+      <section id="flexbox">
+        <img src="../Pictures/WS4frog.png" alt="Proof" />
+      </section>
+    </div>
+  </body>
 </html>
