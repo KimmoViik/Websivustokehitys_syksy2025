@@ -1,9 +1,15 @@
+/*En käytä tekoälyä mitenkään tässä sivussa ollenkaan. 
+Tarkoituksena on laittaa ensimmäiselle sivulle kaikki mikä kiinnostaa ja mitä olen oppinut.
+Linkit vievät oppituntien aiheisiin ja siihen koskien opittuihin asioihin.*/
+
+/*Flexbox commands:
+justify-content, align-items, flex-direction, order, align-self, flex-wrap, flex-flow, align-content. */
+
 @keyframes rainbow {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-/* animation that runs once*/
 
 body {
   background: linear-gradient(67deg,white, #ff0000, #ff7f00, #ffff00,rgb(0, 255, 191));
@@ -11,13 +17,48 @@ body {
   animation: rainbow 20s ease 0s 1 forwards;
 }
 
-.notdone {
-    font-size: 18px;
-    text-shadow: 1px 1px 2px #000000;
-    color: aliceblue;
+.container{
+  display: flex;
+  margin-left: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+  box-sizing: content-box;
 }
-.wip{
-    font-size: 18px;
-    text-shadow: 1px 1px 2px #000000;
-    color: coral;
+
+.Card1 a{
+  color: aliceblue;
+  padding: 10px;
+  background-color: #ff0000;
+  border-radius: 20px;
+}
+
+.Card2 a{
+  color: white;
+  padding: 10px;
+  background-color: aquamarine;
+  border-radius: 20px;
+}
+
+.Card3 a{
+  color: white;
+  padding: 10px;
+  background-color: rgb(127, 129, 255);
+  border-radius: 20px;
+}
+
+.Card4 a{
+  color: white;
+  padding: 10px;
+  background-color: rgb(240, 127, 255);
+  border-radius: 20px;
+}
+
+.Card5 a{
+  color: white;
+  padding: 10px;
+  background-color: rgb(246, 199, 248);
+  border-radius: 20px;
 }
