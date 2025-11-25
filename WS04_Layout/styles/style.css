@@ -120,3 +120,14 @@ body {
   height: auto;
   border-radius: 15px;
 }
+
+.Hyper a{
+  font-weight: bold;
+  color: crimson;
+  margin: 10px;
+
+}
+
+.Hyper a:hover{
+  color: rgb(102, 231, 253);
+}

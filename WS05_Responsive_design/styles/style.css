@@ -1,3 +1,10 @@
+*{
+    margin: 5px;
+}
+
+body{
+    background-color: beige;
+}
 
 .responsive-container {
   flex-wrap: wrap;
@@ -16,27 +23,68 @@
   }
 }
 
-.responsive-image {
-  max-width: 100%;
-  height: auto;
+@media (orientation: landscape) and (max-width: 600px) {
+.Mobile{
+        display: none;
+    }
+}
+@media (min-width: 1025px) {
+    .Mobile{
+        display: none;
+    }
 }
 
-.media-query-box {
+/*Näyttö orientaatio ja muuta*/
+
+.media-box-large {
   padding: 20px;
   text-align: center;
 }
 
+@media (orientation: landscape) {
+  .media-rotation {
+    display: none;
+  }
+}
+@media (orientation: portrait) {
+  .media-rotation {
+    background-color: brown;
+    color: red;
+    padding: 10px;
+  }
+  .cat {
+    display: none;
+  }
+  .media-box-small{
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
-  .media-query-box {
+  .media-box-small {
     background-color: lightcoral;
+  }
+  .media-box-large {
+    display: none;
+  }
+  .cat{
+    justify-content: center;
   }
 }
 
 @media (min-width: 601px) {
-  .media-query-box {
+  .media-box-large {
     background-color: lightblue;
   }
+  .media-box-small {
+    display: none;
+  }
+  .cat{
+    display: none;
+  }
 }
+
+/*NAV asiat joita en kauheesti jaksa alkaa vääntää, olisin voinut vaikka laittaa ne tulemaan esille menusta*/
 
 .responsive-nav .nav-list {
   align-content: space-between;
@@ -47,7 +95,9 @@
     display: none;
   }
 
+  }
+
   .responsive-nav .menu-toggle {
     display: block;
   }
-}
+
