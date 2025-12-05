@@ -1,0 +1,1 @@
+Bootstrap tuntuu vähän oudolta sen jälkeen kun on tehnyt itse css:n mun omasta mielipiteestä, mutta nopeampaa, joten täyttää tarkoituksensa.
