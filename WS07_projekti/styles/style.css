@@ -1,0 +1,7 @@
+body{
+    background-image: url("../../Pictures/serial_experiments_lain.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+}
