@@ -1,7 +1,245 @@
-body{
+@keyframes rainbow {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bg-colors {
+  5% {
+    background-color: rgb(117, 160, 161);
+  }
+  95% {
+    background-color: rgb(100, 111, 141);
+  }
+}
+
+
+@keyframes linkTiming {
+  0% {
+    left: 40%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  10% {
+    left: 35%;
+    opacity: 0;
+    pointer-events: auto;
+  }
+
+  20% {
+    left: 30%;
+    opacity: 0;
+    pointer-events: auto;
+  }
+
+  30% {
+    left: 20%;
+    opacity: 0;
+    pointer-events: auto;
+  }
+
+  40% {
+    left: 10%;
+    opacity: 0;
+    pointer-events: auto;
+  }
+  50% {
+    left: 5%;
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 940px) and (orientation: landscape) {
+  .hidden {
+    display: block !important;
+    opacity: 1 !important;
+    font-size: larger !important;
+    position: fixed !important;
+    z-index: 1;
+    left: 20% !important;
+  }
+
+  .Site {
+    display: none !important;
+    opacity: 0 !important;
+    z-index: -2 !important;
+    visibility: hidden !important;
+  }
+
+  body::before {
+    z-index: 0;
     background-image: url("../../Pictures/serial_experiments_lain.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: white;
+  }
+}
+
+@media (max-width: 1080px) {
+  .Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap!important;
+    justify-items: center;
+  }
+}
+
+
+:root {
+  --bg-alpha: 0; /* 0 => visible, 1 => transparent */
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: calc(1 - var(--bg-alpha) * 1.4);
+  transition: opacity 120ms linear;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body {
+  background-color: black;
+  position: relative;
+  color: rgb(0, 0, 0);
+  animation: bg-colors 20s ease-in-out infinite;
+}
+
+.Site {
+  display: contents;
+}
+
+.Card1 {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 243, 135, 0.438);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+}
+
+.Container {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin: 2%;
+    padding: auto;
+    background-color: rgb(88, 21, 21);
+    border-radius: 25px;
+}
+
+
+.Container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: hsl(calc(220deg * 0.5 * (1 - var(--bg-alpha))), 70%, 70%);
+}
+
+.Card2 {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(110, 23, 23, 0.719);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+.Card3 {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 4, 4, 0.719);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.Card4 {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 148, 148, 0.719);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.Card2:hover,
+.Card2 a:hover,
+.Card3:hover,
+.Card3 a:hover,
+.Card4:hover,
+.Card4 a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.55);
+}
+
+
+.red {
+  --pad: 20px;
+  position: relative;
+  display: block;
+  padding: var(--pad);
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    blue,
+    violet,
+    red,
+    yellow,
+    orange,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 200% 100%;
+  margin-right: 20px;
+  animation: rainbow 10s ease-in-out infinite;
+}
+
+.red-link {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 4px;
+  z-index: 2;
+  color: red;
+  text-decoration: none;
+  animation: linkTiming 10s ease-in-out infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+  color: rgb(255, 255, 255) !important;
+}
+
+.hidden_msg {
+  opacity: 0.05;
+}
+
+.hidden_msg ::selection {
+  background: opacity(1);
+  background-color: rgb(255, 0, 0);
 }
