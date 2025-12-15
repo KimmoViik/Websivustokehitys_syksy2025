@@ -34,7 +34,7 @@ body {
   background-color: #ff0000;
   border-radius: 20px;
 }
-.pic1 a{
+.pic1 a, .pic2 a, .pic3 a, .pic4 a, .pic5 a, .pic6 a, .pic7 a{
   width: 300px;
   height: 300px;
 }
