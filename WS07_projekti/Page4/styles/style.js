@@ -1,13 +1,51 @@
-// ====== TRACKS SETUP ======
+/* I will try to explain it as well as I can with my skill, it's not mine but a combination of gpt, copilot https://stackoverflow.com/questions/18274061/html-5-audio-tag-multiple-files https://www.w3schools.com/html/html5_audio.asp*/
 const tracks1 = [
   { src: "music/Aerials.mp3", title: "Aerials - System of a Down" },
   { src: "music/Toxicity.mp3", title: "Toxicity - System of a Down" }
-];
+]; /* we make a variable and attach src "music locations" to it like in html but weirder
+and add a seperate title so its easier to show the current song playing */
+
+let index1 = 0;
+const audio1 = document.getElementById("player_1");
+const nowPlaying1 = document.getElementById("nowPlaying1");
+
+/*Make variables and match them to the html code and tell the index to take the first item from the list */
+
+audio1.src = tracks1[index1].src;
+nowPlaying1.textContent = "Now playing: " + tracks1[index1].title;
+
+
+/* audio1s src corresponds to variable tracks1s index1s src
+The ID nowPlaying1s text is now playing and the tracks1s index1s current title (i put it here so that when first song plays it shots, i was too lazy to fix it)  */
+audio1.addEventListener("ended", () => {
+  index1 = (index1 + 1) % tracks1.length;
+  audio1.src = tracks1[index1].src;
+  nowPlaying1.textContent = "Now playing: " + tracks1[index1].title;
+  audio1.play();
+});
+/*when audio1 ends index1 is same as index1 + 1 so it takes the next in queue (had to google this but % tracks1.lenght; basicly tells the index how many tracks are left in queue)
+we refresh the audio1.src to the new index1.src for it to play next song
+then we have the nowplaying again which just tells our nowplaying1 element the name of the track and updates it
+and last plays the audio*/
 
 const tracks2 = [
   { src: "music/Kickstarts.mp3", title: "Example - Kickstarts (Bar 9 Remix)" },
   { src: "music/Discover_Life.mp3", title: "Discover Life - Uppermost" }
 ];
+
+let index2 = 0;
+const audio2 = document.getElementById("player_2");
+const nowPlaying2 = document.getElementById("nowPlaying2");
+
+audio2.src = tracks2[index2].src;
+nowPlaying2.textContent = "Now playing: " + tracks2[index2].title;
+
+audio2.addEventListener("ended", () => {
+  index2 = (index2 + 1) % tracks2.length;
+  audio2.src = tracks2[index2].src;
+  nowPlaying2.textContent = "Now playing: " + tracks2[index2].title;
+  audio2.play();
+});
 
 const tracks3 = [
   { src: "music/if_not_winter.mp3", title: "if not winter - Wisp" },
@@ -16,38 +54,23 @@ const tracks3 = [
   { src: "music/Ghosts.mp3", title: "Ghosts - Anizyz" }
 ];
 
-// ====== PLAYER FUNCTION ======
-function setupPlayer(audioId, nowPlayingId, tracks) {
-  let index = 0;
-  const audio = document.getElementById(audioId);
-  const nowPlaying = document.getElementById(nowPlayingId);
+let index3 = 0;
+const audio3 = document.getElementById("player_3");
+const nowPlaying3 = document.getElementById("nowPlaying3");
 
-  audio.src = tracks[index].src;
-  nowPlaying.textContent = "Now playing: " + tracks[index].title;
-
-  audio.addEventListener("ended", () => {
-    index = (index + 1) % tracks.length;
-    audio.src = tracks[index].src;
-    nowPlaying.textContent = "Now playing: " + tracks[index].title;
-    audio.play();
-  });
-
-  return audio; // return audio in case you need to control it later
-}
-
-// ====== INITIALIZE PLAYERS ======
-const audio1 = setupPlayer("player_1", "nowPlaying1", tracks1);
-const audio2 = setupPlayer("player_2", "nowPlaying2", tracks2);
-const audio3 = setupPlayer("player_3", "nowPlaying3", tracks3);
-
-// ====== CAROUSEL CONTROL FOR PLAYER 3 ======
-// Only play the third audio when its slide is active
 const carousel = document.getElementById('carouselExampleCaptions');
+
 carousel.addEventListener('slid.bs.carousel', function (event) {
-  const activeSlide = event.relatedTarget;
-  if (activeSlide.querySelector('#player_3')) {
-    audio3.play();
-  } else {
-    audio3.pause();
+  const nextSlide = event.relatedTarget;
+  if (nextSlide.querySelector('#player_3') && !audio3.src) {
+    audio3.src = tracks3[index3].src;
+    nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
+
+    audio3.addEventListener("ended", () => {
+      index3 = (index3 + 1) % tracks3.length;
+      audio3.src = tracks3[index3].src;
+      nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
+      audio3.play();
+    });
   }
 });
