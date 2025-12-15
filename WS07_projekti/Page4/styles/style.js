@@ -30,7 +30,7 @@ and last plays the audio*/
 
 const tracks2 = [
   { src: "../Page4/music/Kickstarts.mp3", title: "Example - Kickstarts (Bar 9 Remix)" },
-  { src: "../Page4/music/Discover Life.mp3", title: "Discover Life - Uppermost" }
+  { src: "../Page4/music/Discover_Life.mp3", title: "Discover Life - Uppermost" }
 ];
 
 let index2 = 0;
@@ -48,8 +48,8 @@ audio2.addEventListener("ended", () => {
 });
 
 const tracks3 = [
-  { src: "../Page4/music/if not winter.mp3", title: "if not winter - Wisp" },
-  { src: "../Page4/music/Lone Wolf Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
+  { src: "../Page4/music/if_not_winter.mp3", title: "if not winter - Wisp" },
+  { src: "../Page4/music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
   { src: "../Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
   { src: "../Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
 ];
