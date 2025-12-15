@@ -48,10 +48,10 @@ audio2.addEventListener("ended", () => {
 });
 
 const tracks3 = [
-  { src: "../Page4/music/if_not_winter.mp3", title: "if not winter - Wisp" },
-  { src: "../Page4/music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
-  { src: "../Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
-  { src: "../Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
+  { src: "/repo/Page4/music/if_not_winter.mp3", title: "if not winter - Wisp" },
+  { src: "/repo/Page4/music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
+  { src: "/repo/Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
+  { src: "/repo/Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
 ];
 
 let index3 = 0;
