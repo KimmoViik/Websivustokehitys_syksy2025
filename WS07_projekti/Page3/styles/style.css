@@ -1,0 +1,84 @@
+@keyframes breathe{
+    0%{
+        background-color: rgb(255, 178, 187);
+    }
+    10%{
+        background-color: rgb(255, 112, 112);
+    }
+    20% {
+        background-color: rgb(182, 28, 28);
+    }
+    50% {
+        background-color: rgb(85, 12, 21);
+    }
+    100% {
+        background-color: rgb(255, 178, 187);
+    }
+}
+
+
+body{
+   animation: breathe 60s ease-in-out infinite;
+   margin: 10px;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px bold;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(71, 38, 0, 0.637);
+    border-radius: 30px;
+}
+        .container img {
+        max-width: 90%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+.Card1, .Card2, .Card3, .Card4{
+    padding: 20px;
+    align-self: center;
+    background-color: rgba(8, 248, 188, 0.5);
+    margin-bottom: 10%;
+    border-radius: 40px;
+}
+
+.Card1:hover, .Card2:hover, .Card3:hover, .Card4:hover{
+    padding: 22px;
+    background-color: rgba(2, 129, 98, 0.8);
+
+}
+
+.gif2 {
+    margin-top: 20px;
+    margin-left: 25%;
+    border-radius: 10px;
+
+}
+
+#Clock{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#Years{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Copilot autto tässä, en osannut itse tehdä osaa jossa se vaihtaa punaisen ja sinisen välillä */
+.years--blue{
+    color: #2b70ff;
+}
+.years--red{
+     color: #ff2b2b;
+     }
