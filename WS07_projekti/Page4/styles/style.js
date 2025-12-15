@@ -58,12 +58,19 @@ let index3 = 0;
 const audio3 = document.getElementById("player_3");
 const nowPlaying3 = document.getElementById("nowPlaying3");
 
-audio3.src = tracks3[index3].src;
-nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
+const carousel = document.getElementById('carouselExampleCaptions');
 
-audio3.addEventListener("ended", () => {
-  index3 = (index3 + 1) % tracks3.length;
-  audio3.src = tracks3[index3].src;
-  nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
-  audio3.play();
+carousel.addEventListener('slid.bs.carousel', function (event) {
+  const nextSlide = event.relatedTarget;
+  if (nextSlide.querySelector('#player_3') && !audio3.src) {
+    audio3.src = tracks3[index3].src;
+    nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
+
+    audio3.addEventListener("ended", () => {
+      index3 = (index3 + 1) % tracks3.length;
+      audio3.src = tracks3[index3].src;
+      nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
+      audio3.play();
+    });
+  }
 });
