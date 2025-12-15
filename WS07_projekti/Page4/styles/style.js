@@ -1,7 +1,7 @@
 /* I will try to explain it as well as I can with my skill, it's not mine but a combination of gpt, copilot https://stackoverflow.com/questions/18274061/html-5-audio-tag-multiple-files https://www.w3schools.com/html/html5_audio.asp*/
 const tracks1 = [
-  { src: "../Page4/music/Aerials.mp3", title: "Aerials - System of a Down" },
-  { src: "../Page4/music/Toxicity.mp3", title: "Toxicity - System of a Down" }
+  { src: "/Page4/music/Aerials.mp3", title: "Aerials - System of a Down" },
+  { src: "/Page4/music/Toxicity.mp3", title: "Toxicity - System of a Down" }
 ]; /* we make a variable and attach src "music locations" to it like in html but weirder
 and add a seperate title so its easier to show the current song playing */
 
@@ -29,8 +29,8 @@ then we have the nowplaying again which just tells our nowplaying1 element the n
 and last plays the audio*/
 
 const tracks2 = [
-  { src: "../Page4/music/Kickstarts.mp3", title: "Example - Kickstarts (Bar 9 Remix)" },
-  { src: "../Page4/music/Discover_Life.mp3", title: "Discover Life - Uppermost" }
+  { src: "/Page4/music/Kickstarts.mp3", title: "Example - Kickstarts (Bar 9 Remix)" },
+  { src: "/Page4/music/Discover_Life.mp3", title: "Discover Life - Uppermost" }
 ];
 
 let index2 = 0;
@@ -48,10 +48,10 @@ audio2.addEventListener("ended", () => {
 });
 
 const tracks3 = [
-  { src: "../Page4/music/if_not_winter.mp3", title: "if not winter - Wisp" },
-  { src: "../Page4/music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
-  { src: "../Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
-  { src: "../Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
+  { src: "/Page4/music/if_not_winter.mp3", title: "if not winter - Wisp" },
+  { src: "/Page4/music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
+  { src: "/Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
+  { src: "/Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
 ];
 
 let index3 = 0;
