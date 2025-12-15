@@ -10,7 +10,7 @@ function startTime() {
   s = checkTime(s);
   const clockEl = document.getElementById('Clock');
   if (clockEl) {
-    clockEl.textContent = (h + ":" + m + ":" + s);
+    clockEl.textContent = (h + ":" + m + "  " + s + " sec");
   }
   setTimeout(startTime, 1000);
 }
@@ -23,12 +23,12 @@ function printYear() {
   const el = document.getElementById('Years');
   if (el) {
     el.textContent = years + " years ago";
-    el.classList.remove('years--blue', 'years--red');
+    el.classList.remove('years--1', 'years--2');
     // Toggle color: when _yearsToggle is true -> blue, false -> red
-    el.classList.add(_yearsToggle ? 'years--blue' : 'years--red');
+    el.classList.add(_yearsToggle ? 'years--1' : 'years--2');
   }
   _yearsToggle = !_yearsToggle;
-  setTimeout(printYear, 1000);
+  setTimeout(printYear, 4000);
 }
 
 function checkTime(i) {

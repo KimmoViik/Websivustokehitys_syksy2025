@@ -71,14 +71,14 @@ h1{
 }
 
 #Years{
-    font-size: 20px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* Copilot autto tässä, en osannut itse tehdä osaa jossa se vaihtaa punaisen ja sinisen välillä */
-.years--blue{
+.years--1{
     color: #2b70ff;
 }
-.years--red{
+.years--2{
      color: #ff2b2b;
      }
