@@ -63,8 +63,6 @@ audio3.src = tracks3[index3].src;
 nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
 
 audio3.addEventListener("ended", () => {
-    document.body.classList.remove("player1", "player2");
-    document.body.classList.add("player3");
   index3 = (index3 + 1) % tracks3.length;
   audio3.src = tracks3[index3].src;
   nowPlaying3.textContent = "Now playing: " + tracks3[index3].title;
