@@ -51,8 +51,7 @@ const tracks3 = [
   { src: "../Page4/music/if not winter.mp3", title: "if not winter - Wisp" },
   { src: "../Page4/music/Lone Wolf Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
   { src: "../Page4/music/Deathwish.mp3", title: "Deathwish - akikura" },
-  { src: "../Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" },
-  
+  { src: "../Page4/music/Ghosts.mp3", title: "Ghosts - Anizyz" }
 ];
 
 let index3 = 0;
