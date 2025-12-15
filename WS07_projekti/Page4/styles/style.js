@@ -49,9 +49,7 @@ audio2.addEventListener("ended", () => {
 
 const tracks3 = [
   { src: "music/if_not_winter.mp3", title: "if not winter - Wisp" },
-  { src: "music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" },
-  { src: "music/Deathwish.mp3", title: "Deathwish - akikura" },
-  { src: "music/Ghosts.mp3", title: "Ghosts - Anizyz" }
+  { src: "music/Lone_Wolf_Hysteria.mp3", title: "Lone Wolf Hysteria - $uicideboy$" }
 ];
 
 let index3 = 0;
